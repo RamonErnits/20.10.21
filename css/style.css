@@ -1,0 +1,141 @@
+body{
+    text-align: center;
+}
+
+:root{
+    --main-padding: 0.4rem;
+}
+
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;    
+
+}
+
+.container{
+    gap: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.09fr 1fr 1fr 0.5fr 1fr;
+    grid-template-areas: "nav nav nav nav" "main main main main" "feature1 feature2 feature3 feature3" "footer footer footer footer" "Content Content Content Content";
+    color: white;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+nav{
+    background-color: rgb(131, 131, 245);
+    grid-area: nav;
+    padding: var(--main-padding);
+    width: 100%;
+}
+
+.nav-container{
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  
+    grid-template-rows: 1fr;  
+}
+
+.nav-container span{
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main{
+    background-color: lightskyblue;
+    grid-area: main;
+    padding: var(--main-padding);
+    color: black;
+}
+
+#Content{
+    background-color: lightgray;
+    grid-area: Content;
+    padding: var(--main-padding);
+    color: black;
+}
+
+#feature1{
+    background-color: rgb(246, 210, 91);
+    grid-area: feature1;
+    padding: var(--main-padding);
+    color: black;
+}
+
+#feature2{
+    background-color: rgb(179, 92, 250);
+    grid-area: feature2;
+    padding: var(--main-padding);
+    color: black;
+}
+
+#feature3{
+    background-color: rgb(243, 77, 77);
+    grid-area: feature3;
+    padding: var(--main-padding);
+    color: black;
+}
+
+footer{
+    background-color: lightblue;
+    grid-area: footer;
+    padding: var(--main-padding);
+    color: black;
+}
+
+@media (max-width: 768px){
+    #Content{
+        
+    }
+
+    .container{
+        gap: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: 0.03fr 0.3fr 0.4fr 0.2fr 0.2fr ;
+        grid-template-areas: 
+        "nav nav" 
+        "main main" 
+        "Content Content" 
+        "footer feature1" 
+        "feature2 feature3";
+    }
+
+    .nav-container{
+        grid-template-columns: repeat(2, 1fr);  
+        grid-template-rows: repeat(2fr 1fr);  
+    }
+}
+
+@media(max-width: 480px){
+    #sidebar{
+        display: block;
+    }
+
+    .container{
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-rows: 0.04fr 0.2fr 0.5fr 0.2fr 0.2fr 0.2fr 0.2fr;
+        grid-template-areas: 
+        "nav"
+        "main"
+        "Content" 
+        "footer" 
+        "feature1" 
+        "feature2"
+        "feature3";
+    }
+
+    .nav-container{
+        grid-template-columns: 1fr;  
+        grid-template-rows: repeat(4, 1fr);  
+    }
+}
